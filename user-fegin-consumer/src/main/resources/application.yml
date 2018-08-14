@@ -1,0 +1,16 @@
+server:
+  port: 1003
+spring:
+  application:
+    name: user-fegin-consumer
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1000/eureka/
+feign:
+  hystrix:
+    enabled: true
+
+management:
+  security:
+    enabled: false

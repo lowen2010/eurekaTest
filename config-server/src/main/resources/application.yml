@@ -1,0 +1,27 @@
+server:
+  port: 2000
+
+security:
+  user:
+    name: lowen
+    password: lowen
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          basedir: E:/config
+#          uri: file://E:/workSpace/config-repository
+          uri: https://github.com/lowen2010/config-repository
+          username: lowen2010
+          password: hevd5y3q
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1000/eureka/
+  instance:
+      instance-id:  ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+      prefer-ip-address: true
